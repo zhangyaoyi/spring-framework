@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "https://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+<!--	<bean id="testBean" class="org.springframework.jmx.JmxTestBean">
+		<property name="name">
+			<value>TEST</value>
+		</property>
+		<property name="age">
+			<value>100</value>
+		</property>
+	</bean>-->
+
+	<bean id="helloWorldBean" class="org.springframework.bean.HelloWorldBean"/>
+
+</beans>

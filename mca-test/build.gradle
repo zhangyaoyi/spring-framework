@@ -1,0 +1,15 @@
+plugins {
+    id 'java'
+}
+apply plugin: "kotlin"
+group = 'org.springframework'
+version = '8.1.1'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    api(project(":spring-context"))
+}
+
