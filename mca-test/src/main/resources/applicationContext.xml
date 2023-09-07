@@ -14,4 +14,6 @@
 
 	<bean id="helloWorldBean" class="org.springframework.bean.HelloWorldBean"/>
 
+	<bean id="testBeanFactoryPostProcessor" class="org.springframework.bean.TestBeanFactoryPostProcessor"/>
+
 </beans>

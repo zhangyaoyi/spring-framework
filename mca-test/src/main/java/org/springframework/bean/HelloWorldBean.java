@@ -12,4 +12,8 @@ public class HelloWorldBean {
 		System.out.println(message);
 	}
 
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 }
