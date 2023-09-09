@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "https://www.springframework.org/dtd/spring-beans-2.0.dtd">
 
-<beans>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:mca="http://www.mashibing.com/schema/mca"
+	   xsi:schemaLocation="
+	   	http://www.springframework.org/schema/beans
+       	http://www.springframework.org/schema/beans/spring-beans.xsd
+    	http://www.mashibing.com/schema/mca
+    	http://www.mashibing.com/schema/mca.xsd">
 
-<!--	<bean id="testBean" class="org.springframework.jmx.JmxTestBean">
-		<property name="name">
-			<value>TEST</value>
-		</property>
-		<property name="age">
-			<value>100</value>
-		</property>
-	</bean>-->
+	<mca:user id="testUser" userName="mca" password="mca" email="123@test.com"/>
 
 	<bean id="helloWorldBean" class="org.springframework.bean.HelloWorldBean"/>
 
 	<bean id="testBeanFactoryPostProcessor" class="org.springframework.bean.TestBeanFactoryPostProcessor"/>
 
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource"/>
+
+	<bean id="testApplicationEventListener" class="org.springframework.event.TestApplicationEventListener"/>
 </beans>
