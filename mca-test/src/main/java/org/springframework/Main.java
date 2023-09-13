@@ -1,5 +1,7 @@
 package org.springframework;
 
+import org.springframework.aware.Test;
+import org.springframework.aware.TestApp;
 import org.springframework.bean.HelloWorldBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -16,5 +18,8 @@ public class Main {
 
 		TestApplicationEvent testEvent = new TestApplicationEvent("Test Event");
 		applicationContext.publishEvent(testEvent);
+
+		Test test = ((TestApp) applicationContext.getBean("testApp")).getTest();
+		System.out.println("TestAware Name: " + test.getName());
 	}
 }

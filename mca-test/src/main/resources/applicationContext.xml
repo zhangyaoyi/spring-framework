@@ -18,4 +18,8 @@
 	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource"/>
 
 	<bean id="testApplicationEventListener" class="org.springframework.event.TestApplicationEventListener"/>
+
+	<bean id="testAwareProcessor" class="org.springframework.aware.TestAwareProcessor"/>
+
+	<bean id="testApp" class="org.springframework.aware.TestApp"/>
 </beans>
