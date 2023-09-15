@@ -22,4 +22,6 @@
 	<bean id="testAwareProcessor" class="org.springframework.aware.TestAwareProcessor"/>
 
 	<bean id="testApp" class="org.springframework.aware.TestApp"/>
+
+	<bean class="org.springframework.bean.TestBeanDefinitionRegistryPostProcessor"/>
 </beans>

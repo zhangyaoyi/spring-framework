@@ -4,6 +4,8 @@ public class HelloWorldBean {
 
 	private String message;
 
+	private String name;
+
 	public HelloWorldBean() {
 		this.message = "Hello world!";
 	}
@@ -14,6 +16,14 @@ public class HelloWorldBean {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getName() {
+		return name;
 	}
 
 }
