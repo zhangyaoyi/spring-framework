@@ -3,6 +3,7 @@ package org.springframework;
 import org.springframework.aware.Test;
 import org.springframework.aware.TestApp;
 import org.springframework.bean.HelloWorldBean;
+import org.springframework.annotation.TestAnnotationBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.customtag.User;
@@ -21,5 +22,12 @@ public class Main {
 
 		Test test = ((TestApp) applicationContext.getBean("testApp")).getTest();
 		System.out.println("TestAware Name: " + test.getName());
+
+		String name = applicationContext.getBean("testAnnotationBean", TestAnnotationBean.class).getName();
+		System.out.println("TestAnnotationBean Name: " + name);
+
+		applicationContext.getBean("helloWorldBeanForConfigurationClassA", HelloWorldBean.class).sayMessage();
+		applicationContext.getBean("helloWorldBeanForConfigurationClassB", HelloWorldBean.class).sayMessage();
+
 	}
 }

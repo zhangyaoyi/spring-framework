@@ -53,7 +53,7 @@ import org.springframework.util.StringUtils;
  * @since 2.5
  */
 public class ComponentScanBeanDefinitionParser implements BeanDefinitionParser {
-
+	//namespace tag attribute
 	private static final String BASE_PACKAGE_ATTRIBUTE = "base-package";
 
 	private static final String RESOURCE_PATTERN_ATTRIBUTE = "resource-pattern";
@@ -82,6 +82,7 @@ public class ComponentScanBeanDefinitionParser implements BeanDefinitionParser {
 	public BeanDefinition parse(Element element, ParserContext parserContext) {
 		String basePackage = element.getAttribute(BASE_PACKAGE_ATTRIBUTE);
 		basePackage = parserContext.getReaderContext().getEnvironment().resolvePlaceholders(basePackage);
+		//support multiple base packages, delimiterred by comma, semicolon or whitespace \t\n
 		String[] basePackages = StringUtils.tokenizeToStringArray(basePackage,
 				ConfigurableApplicationContext.CONFIG_LOCATION_DELIMITERS);
 
