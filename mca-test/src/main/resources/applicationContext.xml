@@ -29,4 +29,6 @@
 	<bean id="testApp" class="org.springframework.aware.TestApp"/>
 
 	<bean class="org.springframework.bean.TestBeanDefinitionRegistryPostProcessor"/>
+
+	<bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean"/>
 </beans>

@@ -6,6 +6,7 @@ import org.springframework.bean.HelloWorldBean;
 import org.springframework.annotation.TestAnnotationBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.core.convert.ConversionService;
 import org.springframework.customtag.User;
 import org.springframework.event.TestApplicationEvent;
 
@@ -28,6 +29,13 @@ public class Main {
 
 		applicationContext.getBean("helloWorldBeanForConfigurationClassA", HelloWorldBean.class).sayMessage();
 		applicationContext.getBean("helloWorldBeanForConfigurationClassB", HelloWorldBean.class).sayMessage();
+
+
+		ConversionService conversionService = (ConversionService) applicationContext.getBean("conversionService");
+		String temp = conversionService.convert(8888888, String.class);
+		System.out.println("conversionService: " + temp);
+		
+
 
 	}
 }
