@@ -4,6 +4,7 @@ import org.springframework.aware.Test;
 import org.springframework.aware.TestApp;
 import org.springframework.bean.HelloWorldBean;
 import org.springframework.annotation.TestAnnotationBean;
+import org.springframework.bean.PrototypeBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.convert.ConversionService;
@@ -34,7 +35,11 @@ public class Main {
 		ConversionService conversionService = (ConversionService) applicationContext.getBean("conversionService");
 		String temp = conversionService.convert(8888888, String.class);
 		System.out.println("conversionService: " + temp);
-		
+
+
+		System.out.println(applicationContext.getBean("prototypeBean", PrototypeBean.class));
+		System.out.println(applicationContext.getBean("prototypeBean", PrototypeBean.class));
+
 
 
 	}

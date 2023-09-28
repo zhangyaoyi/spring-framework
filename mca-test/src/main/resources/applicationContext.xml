@@ -31,4 +31,6 @@
 	<bean class="org.springframework.bean.TestBeanDefinitionRegistryPostProcessor"/>
 
 	<bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean"/>
+
+	<bean id="prototypeBean" class="org.springframework.bean.PrototypeBean" scope="prototype"/>
 </beans>
