@@ -12,25 +12,32 @@
     	https://www.springframework.org/schema/context/spring-context.xsd">
 
 
-	<context:component-scan base-package="org.springframework.bean,org.springframework.annotation"/>
+<!--	<context:component-scan base-package="org.springframework.bean,org.springframework.annotation"/>-->
 
-	<mca:user id="testUser" userName="mca" password="mca" email="123@test.com"/>
+<!--	<mca:user id="testUser" userName="mca" password="mca" email="123@test.com"/>-->
 
-	<bean id="helloWorldBean" class="org.springframework.bean.HelloWorldBean"/>
+<!--	<bean id="helloWorldBean" class="org.springframework.bean.HelloWorldBean"/>-->
 
-	<bean id="testBeanFactoryPostProcessor" class="org.springframework.bean.TestBeanFactoryPostProcessor"/>
+<!--	<bean id="testBeanFactoryPostProcessor" class="org.springframework.bean.TestBeanFactoryPostProcessor"/>-->
 
-	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource"/>
+<!--	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource"/>-->
 
-	<bean id="testApplicationEventListener" class="org.springframework.event.TestApplicationEventListener"/>
+<!--	<bean id="testApplicationEventListener" class="org.springframework.event.TestApplicationEventListener"/>-->
 
-	<bean id="testAwareProcessor" class="org.springframework.aware.TestAwareProcessor"/>
+<!--	<bean id="testAwareProcessor" class="org.springframework.aware.TestAwareProcessor"/>-->
 
-	<bean id="testApp" class="org.springframework.aware.TestApp"/>
+<!--	<bean id="testApp" class="org.springframework.aware.TestApp"/>-->
 
-	<bean class="org.springframework.bean.TestBeanDefinitionRegistryPostProcessor"/>
+<!--	<bean class="org.springframework.bean.TestBeanDefinitionRegistryPostProcessor"/>-->
 
-	<bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean"/>
+<!--	<bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean"/>-->
 
-	<bean id="prototypeBean" class="org.springframework.bean.PrototypeBean" scope="prototype"/>
+<!--	<bean id="prototypeBean" class="org.springframework.bean.PrototypeBean" scope="prototype"/>-->
+
+<!--	<bean id="testFactoryBean" class="org.springframework.bean.TestFactoryBean"/>-->
+
+	<bean class="org.springframework.supplier.AppSupplier"/>
+	<bean id="app" class="org.springframework.supplier.App"/>
+	<bean class="org.springframework.supplier.AppSupplierBeanFactoryPostPrcessor"/>
+
 </beans>
