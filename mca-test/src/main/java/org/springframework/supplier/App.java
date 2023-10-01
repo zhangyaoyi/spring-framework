@@ -8,6 +8,10 @@ public class App {
 		this.name = name;
 	}
 
+	public App() {
+
+	}
+
 	public void setName(String name) {
 		this.name = name;
 	}

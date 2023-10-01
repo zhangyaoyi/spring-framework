@@ -10,6 +10,15 @@ public class HelloWorldBean {
 		this.message = "Hello world!";
 	}
 
+	public HelloWorldBean(String message) {
+		this.message = message;
+	}
+
+	public HelloWorldBean(String message, String name) {
+		this.message = message;
+		this.name = name;
+	}
+
 	public void sayMessage() {
 		System.out.println(message);
 	}
