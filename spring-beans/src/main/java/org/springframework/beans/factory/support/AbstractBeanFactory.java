@@ -298,6 +298,7 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
 					beanCreation.tag("beanType", requiredType::toString);
 				}
 				RootBeanDefinition mbd = getMergedLocalBeanDefinition(beanName);
+				//check that bean definition is not abstract
 				checkMergedBeanDefinition(mbd, beanName, args);
 
 				// Guarantee initialization of beans that the current bean depends on.

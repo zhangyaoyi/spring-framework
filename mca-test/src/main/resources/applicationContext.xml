@@ -40,6 +40,9 @@
 <!--	<bean id="app" class="org.springframework.supplier.App"/>-->
 <!--	<bean class="org.springframework.supplier.AppSupplierBeanFactoryPostPrcessor"/>-->
 
-	<bean id="helloWorldBean" class="org.springframework.bean.HelloWorldBean" scope="prototype"/>
+	<bean id="helloWorldBean" class="org.springframework.bean.HelloWorldBean" scope="prototype">
+		<constructor-arg name="message" value="mca"/>
+	</bean>
+
 
 </beans>
