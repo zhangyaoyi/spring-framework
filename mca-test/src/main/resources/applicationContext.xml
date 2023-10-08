@@ -40,9 +40,44 @@
 <!--	<bean id="app" class="org.springframework.supplier.App"/>-->
 <!--	<bean class="org.springframework.supplier.AppSupplierBeanFactoryPostPrcessor"/>-->
 
-	<bean id="helloWorldBean" class="org.springframework.bean.HelloWorldBean" scope="prototype">
-		<constructor-arg name="message" value="mca"/>
-	</bean>
+<!--	<bean id="helloWorldBean" class="org.springframework.bean.HelloWorldBean" scope="prototype">-->
+<!--		<constructor-arg name="message" value="mca"/>-->
+<!--	</bean>-->
 
+<!--	<bean id="person" class="org.springframework.autowire.Person" autowire="byName">-->
+<!--		<property name="name" value="mca"/>-->
+<!--		<property name="hobbies">-->
+<!--			<list>-->
+<!--				<ref bean="hobby1"/>-->
+<!--				<ref bean="hobby2"/>-->
+<!--			</list>-->
+<!--		</property>-->
+<!--	</bean>-->
+<!--	<bean id="address" class="org.springframework.autowire.Address">-->
+<!--		<property name="city" value="beijing"/>-->
+<!--		<property name="street" value="chang'an street"/>-->
+<!--		<property name="nation" value="China"/>-->
+<!--	</bean>-->
+<!--	<bean id="hobby1" class="org.springframework.autowire.Hobby">-->
+<!--		<property name="hobbyName" value="basketball"/>-->
+<!--		<property name="duration" value="10 years"/>-->
+<!--	</bean>-->
+<!--	<bean id="hobby2" class="org.springframework.autowire.Hobby">-->
+<!--		<property name="hobbyName" value="football"/>-->
+<!--		<property name="duration" value="10 years"/>-->
+<!--	</bean>-->
+
+	<bean id="person" class="org.springframework.autowire.Person">
+		<property name="name" value="mca"/>
+		<property name="hobbies">
+			<list>
+				<ref bean="hobby1"/>
+			</list>
+		</property>
+	</bean>
+	<bean id="hobby1" class="org.springframework.autowire.Hobby">
+		<property name="hobbyName" value="basketball"/>
+		<property name="duration" value="10 years"/>
+	</bean>
 
 </beans>

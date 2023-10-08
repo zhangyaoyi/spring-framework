@@ -576,6 +576,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 
 			// Tell the subclass to refresh the internal bean factory.
 			// 创建BeanFactory，并加载BeanDefinition，由 AbstractRefreshableApplicationContext 子类实现
+			// xml和annotation->BeanDefinition->BeanDefinitionRegistry->BeanFactory
 			ConfigurableListableBeanFactory beanFactory = obtainFreshBeanFactory();
 
 			// Prepare the bean factory for use in this context.

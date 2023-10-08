@@ -40,9 +40,6 @@ public class Main {
 //		System.out.println(applicationContext.getBean("prototypeBean", PrototypeBean.class));
 //		System.out.println(applicationContext.getBean("prototypeBean", PrototypeBean.class));
 
-		HelloWorldBean helloWorldBean = (HelloWorldBean) applicationContext.getBean("helloWorldBean");
-		HelloWorldBean helloWorldBean2 = (HelloWorldBean) applicationContext.getBean("helloWorldBean");
-
 
 
 	}
