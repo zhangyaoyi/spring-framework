@@ -566,6 +566,11 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 		}
 
 		// Allow post-processors to modify the merged bean definition.
+		// MergedBeanDefinitionPostProcessor 用于修改合并后的 BeanDefinition
+		// 例如： CommonAnnotationBeanPostProcessor 会将 @PostConstruct 注解的方法封装成 InitDestroyAnnotationBeanPostProcessor#LifecycleMetadata
+		// 例如： CommonAnnotationBeanPostProcessor 会将 @PreDestroy 注解的方法封装成 InitDestroyAnnotationBeanPostProcessor#LifecycleMetadata
+		// 例如： AutowiredAnnotationBeanPostProcessor 会将 @Autowired 注解的属性封装成 InjectionMetadata#AutowiredFieldElement
+		// 例如： RequiredAnnotationBeanPostProcessor 会将 @Required 注解的属性封装成 InjectionMetadata#RequiredFieldElement
 		synchronized (mbd.postProcessingLock) {
 			if (!mbd.postProcessed) {
 				try {
@@ -588,6 +593,11 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 				logger.trace("Eagerly caching bean '" + beanName +
 						"' to allow for resolving potential circular references");
 			}
+
+			// 将 beanName 对应的 bean 实例添加到 singletonFactories 中
+			// bean 实例创建过程中，如果发现循环依赖，可以通过 singletonFactories 获取到 bean 实例
+			// bean 完成实例化，但是还没有完成属性填充，所以此时获取到的 bean 实例是不完整的
+			// 例如：A 依赖 B，B 依赖 A，A 创建过程中发现 B 依赖 A，此时可以通过 singletonFactories 获取到 A 的 bean 实例，但是 A 的属性还没有填充
 			addSingletonFactory(beanName, () -> getEarlyBeanReference(beanName, mbd, bean));
 		}
 

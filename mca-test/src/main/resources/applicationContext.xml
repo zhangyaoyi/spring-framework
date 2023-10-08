@@ -67,17 +67,25 @@
 <!--		<property name="duration" value="10 years"/>-->
 <!--	</bean>-->
 
-	<bean id="person" class="org.springframework.autowire.Person">
-		<property name="name" value="mca"/>
-		<property name="hobbies">
-			<list>
-				<ref bean="hobby1"/>
-			</list>
-		</property>
+<!--	<bean id="person" class="org.springframework.autowire.Person">-->
+<!--		<property name="name" value="mca"/>-->
+<!--		<property name="hobbies">-->
+<!--			<list>-->
+<!--				<ref bean="hobby1"/>-->
+<!--			</list>-->
+<!--		</property>-->
+<!--	</bean>-->
+<!--	<bean id="hobby1" class="org.springframework.autowire.Hobby">-->
+<!--		<property name="hobbyName" value="basketball"/>-->
+<!--		<property name="duration" value="10 years"/>-->
+<!--	</bean>-->
+
+	<bean id="circularA" class="org.springframework.circularreference.CircularA">
+		<property name="circularB" ref="circularB"/>
 	</bean>
-	<bean id="hobby1" class="org.springframework.autowire.Hobby">
-		<property name="hobbyName" value="basketball"/>
-		<property name="duration" value="10 years"/>
+
+	<bean id="circularB" class="org.springframework.circularreference.CircularB">
+		<property name="circularA" ref="circularA"/>
 	</bean>
 
 </beans>
