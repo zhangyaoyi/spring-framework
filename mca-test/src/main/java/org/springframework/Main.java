@@ -6,16 +6,32 @@ import org.springframework.bean.HelloWorldBean;
 import org.springframework.annotation.TestAnnotationBean;
 import org.springframework.bean.PrototypeBean;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.AbstractRefreshableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.convert.ConversionService;
 import org.springframework.customtag.User;
 import org.springframework.event.TestApplicationEvent;
+import org.springframework.event.TestApplicationEventListener;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Main {
 	public static void main(String[] args) {
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
-//		applicationContext.getBean("helloWorldBean", HelloWorldBean.class).sayMessage();
-//
+
+//		String[] configLocations = new String[]{"applicationContext.xml"};
+//		AbstractRefreshableApplicationContext applicationContext = new ClassPathXmlApplicationContext(configLocations, false);
+//		applicationContext.setAllowCircularReferences(false);
+//		applicationContext.setAllowBeanDefinitionOverriding(false);
+//		applicationContext.refresh();
+
+//		AbstractApplicationContext applicationContext = new ClassPathXmlApplicationContext(configLocations, false);
+//		applicationContext.addApplicationListener(new TestApplicationEventListener());
+//		applicationContext.refresh();
+//		applicationContext.publishEvent(new TestApplicationEvent("Test Event"));
+
 //		User user = (User) applicationContext.getBean("testUser");
 //		System.out.println("User Name: " + user.getUserName());
 //
