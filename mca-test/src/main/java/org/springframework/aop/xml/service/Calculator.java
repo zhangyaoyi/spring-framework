@@ -4,8 +4,8 @@ package org.springframework.aop.xml.service;
 
 public interface Calculator {
 
-    public Integer add(Integer i,Integer j) throws NoSuchMethodException;
-    public Integer sub(Integer i,Integer j) throws NoSuchMethodException;
-    public Integer mul(Integer i,Integer j) throws NoSuchMethodException;
-    public Integer div(Integer i,Integer j) throws NoSuchMethodException;
+	Integer add(Integer i,Integer j) throws NoSuchMethodException;
+    Integer sub(Integer i, Integer j) throws NoSuchMethodException;
+    Integer mul(Integer i, Integer j) throws NoSuchMethodException;
+    Integer div(Integer i, Integer j) throws NoSuchMethodException;
 }
