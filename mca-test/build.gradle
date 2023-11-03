@@ -11,5 +11,6 @@ repositories {
 
 dependencies {
     api(project(":spring-context"))
+    api("org.aspectj:aspectjweaver:1.9.6")
 }
 
