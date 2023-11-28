@@ -5,7 +5,6 @@ import org.springframework.stereotype.Component;
 
 
 @Component("testAnnotationBean")
-@ComponentScan
 public class TestAnnotationBean {
 
 	private String name;
