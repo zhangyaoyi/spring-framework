@@ -12,5 +12,7 @@ repositories {
 dependencies {
     api(project(":spring-context"))
     api("org.aspectj:aspectjweaver:1.9.6")
+    api("com.alibaba:druid:1.2.4")
+    api("mysql:mysql-connector-java:5.1.48")
 }
 
