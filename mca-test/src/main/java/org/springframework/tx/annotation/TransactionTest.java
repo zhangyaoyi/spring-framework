@@ -1,8 +1,8 @@
 package org.springframework.tx.annotation;
 
-import com.mashibing.tx.annotation.config.TransactionConfig;
-import com.mashibing.tx.annotation.dao.BookDao;
-import com.mashibing.tx.annotation.service.BookService;
+import org.springframework.tx.annotation.config.TransactionConfig;
+import org.springframework.tx.annotation.dao.BookDao;
+import org.springframework.tx.annotation.service.BookService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class TransactionTest {
