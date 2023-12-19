@@ -14,7 +14,7 @@
     <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate" >
         <constructor-arg name="dataSource" ref="dataSource"/>
     </bean>
-    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    <bean id="dataSourceTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
     </bean>
     <bean id="bookService" class="org.springframework.tx.xml.service.BookService">
@@ -27,7 +27,7 @@
         <aop:pointcut id="txPoint" expression="execution(* org.springframework.tx.xml.*.*.*(..))"/>
         <aop:advisor advice-ref="myAdvice" pointcut-ref="txPoint"/>
     </aop:config>
-    <tx:advice id="myAdvice" transaction-manager="transactionManager">
+    <tx:advice id="myAdvice" transaction-manager="dataSourceTransactionManager">
         <tx:attributes>
             <tx:method name="checkout" propagation="REQUIRED" />
             <tx:method name="updateStock" propagation="REQUIRES_NEW" />
