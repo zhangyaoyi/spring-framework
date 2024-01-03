@@ -32,9 +32,12 @@
 		-->
 		<aop:advisor advice-ref="myAdvice" pointcut-ref="txPoint"/>
 	</aop:config>
+
+	<!-- TransactionInterceptor.class -->
 	<tx:advice id="myAdvice" transaction-manager="dataSourceTransactionManager">
 		<tx:attributes>
-			<tx:method name="checkout" propagation="REQUIRED"/>
+			<!-- NameMatchTransactionAttributeSource.class -->
+ 			<tx:method name="checkout" propagation="REQUIRED"/> <!-- RuleBasedTransactionAttribute -->
 			<tx:method name="updateStock" propagation="REQUIRES_NEW"/>
 		</tx:attributes>
 	</tx:advice>
