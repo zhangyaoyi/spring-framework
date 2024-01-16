@@ -661,6 +661,8 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 		}
 
 		// Initialize any placeholder property sources in the context environment.
+		// getEnvironment() 返回 new StandardEnvironment()，StandardEnvironment实现了 ConfigurableEnvironment
+		// 初始化了系统环境变量和系统属性，但是没有替换占位符
 		initPropertySources();
 
 		// Validate that all properties marked as required are resolvable:

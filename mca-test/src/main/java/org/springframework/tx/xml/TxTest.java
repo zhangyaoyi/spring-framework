@@ -7,7 +7,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class TxTest {
     public static void main(String[] args) {
-		//System.setProperty(DebuggingClassWriter.DEBUG_LOCATION_PROPERTY,"/Users/yaoyizhang/Desktop");
+		System.setProperty(DebuggingClassWriter.DEBUG_LOCATION_PROPERTY,"/Users/yaoyizhang/Desktop");
         ApplicationContext context = new ClassPathXmlApplicationContext("tx.xml");
         BookService bookService = context.getBean("bookService", BookService.class);
         bookService.checkout("zhangsan",1);
