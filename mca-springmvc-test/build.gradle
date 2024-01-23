@@ -11,5 +11,7 @@ repositories {
 
 dependencies {
 	api(project(":spring-context"))
+	api(project(":spring-web"))
+	api(project(":spring-webmvc"))
 }
 
