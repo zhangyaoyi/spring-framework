@@ -59,5 +59,4 @@ settings.gradle.projectsLoaded {
 	}
 }
 include 'mca-test'
-include 'mca-mvc-test'
 
